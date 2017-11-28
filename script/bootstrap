@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-function main {
+function old_main {
   local shome="$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"
   source "$shome/script/profile"
   source normalize
@@ -19,5 +19,19 @@ function main {
   echo "${CHAMBER_VERSION}" > "$shome/.chamber-version"
   popd
 }
+
+function main {
+  local shome="$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"
+  source "$shome/script/profile"
+  source normalize
+
+	cd "$shome"
+  export GOPATH="$shome"
+	mkdir -p src/github.com/segmentio
+	rm -rf src/github.com/segmentio/chamber
+	git clone git@github.com:defn/chamber src/github.com/segmentio/chamber
+  go get github.com/segmentio/chamber
+}
+
 
 main "$@"

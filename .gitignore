@@ -1,2 +1,4 @@
-bin/chamber
 .chamber-version
+/pkg
+/src
+/bin
