@@ -31,7 +31,6 @@ function main {
 	rm -rf src/github.com/segmentio/chamber
 	git clone git@github.com:defn/chamber src/github.com/segmentio/chamber
   go get github.com/segmentio/chamber
-  echo "${CHAMBER_VERSION}" > "$shome/.chamber-version"
 }
 
 
