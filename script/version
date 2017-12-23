@@ -4,7 +4,7 @@ function version {
   local shome="$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"
   source "$shome/script/profile"
 
-  local ver_chamber="$(cat "$shome/src/github.com/segmentio/chamber/.chamber-version" 2>/dev/null || true)"
+  local ver_chamber="$(cat "$shome/.chamber-version" 2>/dev/null || true)"
   jq -n \
     --arg chamber "$ver_chamber" \
     '{chamber: $chamber}'
