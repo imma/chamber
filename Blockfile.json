@@ -1,4 +1,7 @@
 {
   "require": [
-  ]
+  ],
+  "versions": {
+    "chamber": "segmentio/chamber"
+  }
 }
