@@ -16,7 +16,6 @@ function main {
   pushd "$shome/bin"
   cp "${DATA}/cache/curl/$fnm_chamber" "$shome/bin/chamber"
   chmod 755 "$shome/bin/chamber"
-  echo "${CHAMBER_VERSION}" > "$shome/.chamber-version"
   popd
 }
 
